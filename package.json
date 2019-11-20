@@ -1,0 +1,24 @@
+{
+  "name": "friend-finder",
+  "version": "1.0.0",
+  "description": "application using express and node.js to match you with friends with similar interests",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tawnfran/Friend-Finder.git"
+  },
+  "author": "Tawny Francis",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tawnfran/Friend-Finder/issues"
+  },
+  "homepage": "https://github.com/tawnfran/Friend-Finder#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "path": "^0.12.7"
+  }
+}
