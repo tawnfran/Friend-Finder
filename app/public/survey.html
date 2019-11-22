@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <title>Friend Survey</title>
+</head>
+
+<body>
+
+    <div class="container">
+        <div id="header">
+            <h1>Survey Questions!</h1>
+            <br>
+        </div>
+        <div class="container2">
+            <h2>About you</h2>
+            <form>
+                <div class="form-group">
+                    <label for="NameHere">Name (Required)</label>
+                    <input type="Name" class="form-control" id="nameHere">
+
+                </div>
+                <div class="form-group">
+                    <label for="linkHere">Link to Photo Image (Required)</label>
+                    <input type="link" class="form-control" id="linkHere">
+                </div>
+
+
+
+            </form>
+        </div>
+        <form>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Email address</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                    placeholder="Enter email">
+                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone
+                    else.</small>
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">Password</label>
+                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+            </div>
+            <div class="form-group form-check">
+                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                <label class="form-check-label" for="exampleCheck1">Check me out</label>
+            </div>
+            <button type="submit" class="btn btn-primary" id="submit">Submit</button>
+        </form>
+
+        <script type="text/javascript">
+            $("#submit").on("click", function (event) {
+                var userData = {
+                    name: "Dave",
+                    photo: "pic here",
+                    scores: [
+                        "5",
+                        "1",
+                        "4",
+                        "4",
+                        "5",
+                        "1",
+                        "2",
+                        "5",
+                        "4",
+                        "1"
+
+                    ]
+                };
+                $.post("/api/friends", userData, function (data) {
+                    console.log(data);
+                })
+            })
+
+        </script>
+    </div>
+</body>
+
+</html>
