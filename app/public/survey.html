@@ -43,8 +43,8 @@
                         <h5>Question 1</h5>
                     </label>
                     <p>You consider yourself knowledgable on current issues</p>
-                    <select class="browser-default custom-select">
-                        <option selected>Open this select menu</option>
+                    <select class="browser-default custom-select" id="q1">
+                        <option selected>Select an answer here</option>
                         <option value="1">1 (Strongly disagree)</option>
                         <option value="2">2 </option>
                         <option value="3">3 </option>
@@ -57,8 +57,8 @@
                         <h5>Question 2</h5>
                     </label>
                     <p>You enjoy social events with alot of people</p>
-                    <select class="browser-default custom-select">
-                        <option selected>Open this select menu</option>
+                    <select class="browser-default custom-select" id="q2">
+                        <option selected>Select an answer here</option>
                         <option value="1">1 (Strongly disagree)</option>
                         <option value="2">2 </option>
                         <option value="3">3 </option>
@@ -71,8 +71,8 @@
                         <h5>Question 3</h5>
                     </label>
                     <p>You consider yourself detail oriented</p>
-                    <select class="browser-default custom-select">
-                        <option selected>Open this select menu</option>
+                    <select class="browser-default custom-select" id="q3">
+                        <option selected>Select an answer here</option>
                         <option value="1">1 (Strongly disagree)</option>
                         <option value="2">2 </option>
                         <option value="3">3 </option>
@@ -85,8 +85,8 @@
                         <h5>Question 4</h5>
                     </label>
                     <p>You are affectionate with people you care about</p>
-                    <select class="browser-default custom-select">
-                        <option selected>Open this select menu</option>
+                    <select class="browser-default custom-select" id="q4">
+                        <option selected>Select an answer here</option>
                         <option value="1">1 (Strongly disagree)</option>
                         <option value="2">2 </option>
                         <option value="3">3 </option>
@@ -99,8 +99,8 @@
                         <h5>Question 5</h5>
                     </label>
                     <p>You have a hard time having empathy for others</p>
-                    <select class="browser-default custom-select">
-                        <option selected>Open this select menu</option>
+                    <select class="browser-default custom-select" id="q5">
+                        <option selected>Select an answer here</option>
                         <option value="1">1 (Strongly disagree)</option>
                         <option value="2">2 </option>
                         <option value="3">3 </option>
@@ -113,8 +113,8 @@
                         <h5>Question 6</h5>
                     </label>
                     <p>You are still bothered by mistakes you made in the past</p>
-                    <select class="browser-default custom-select">
-                        <option selected>Open this select menu</option>
+                    <select class="browser-default custom-select" id="q6">
+                        <option selected>Select an answer here</option>
                         <option value="1">1 (Strongly disagree)</option>
                         <option value="2">2 </option>
                         <option value="3">3 </option>
@@ -127,8 +127,8 @@
                         <h5>Question 7</h5>
                     </label>
                     <p>You can stay calm while under alot of pressure</p>
-                    <select class="browser-default custom-select">
-                        <option selected>Open this select menu</option>
+                    <select class="browser-default custom-select" id="q7">
+                        <option selected>Select an answer here</option>
                         <option value="1">1 (Strongly disagree)</option>
                         <option value="2">2 </option>
                         <option value="3">3 </option>
@@ -141,8 +141,8 @@
                         <h5>Question 8</h5>
                     </label>
                     <p>You are very goal-oriented and focused on your future</p>
-                    <select class="browser-default custom-select">
-                        <option selected>Open this select menu</option>
+                    <select class="browser-default custom-select" id="q8">
+                        <option selected>Select an answer here</option>
                         <option value="1">1 (Strongly disagree)</option>
                         <option value="2">2 </option>
                         <option value="3">3 </option>
@@ -155,8 +155,8 @@
                         <h5>Question 9</h5>
                     </label>
                     <p>You look after yourself first, and others come in second</p>
-                    <select class="browser-default custom-select">
-                        <option selected>Open this select menu</option>
+                    <select class="browser-default custom-select" id="q9">
+                        <option selected>Select an answer here</option>
                         <option value="1">1 (Strongly disagree)</option>
                         <option value="2">2 </option>
                         <option value="3">3 </option>
@@ -170,8 +170,8 @@
                     </label>
                     <p>You frequently find yourself wondering how technological advancement could change everyday life
                     </p>
-                    <select class="browser-default custom-select">
-                        <option selected>Open this select menu</option>
+                    <select class="browser-default custom-select" id="q10">
+                        <option selected>Select an answer here</option>
                         <option value="1">1 (Strongly disagree)</option>
                         <option value="2">2 </option>
                         <option value="3">3 </option>
@@ -186,30 +186,32 @@
         <div class="submitContainer">
             <footer class="footer">
                 <div class="container">
-                    <p><a href="/api/friends">API Friends List</a> | <a href="https://github.com/tawnfran/Friend-Finder">GitHub Repo</a>
+                    <p><a href="/api/friends">API Friends List</a> | <a
+                            href="https://github.com/tawnfran/Friend-Finder">GitHub Repo</a>
                 </div>
             </footer>
         </div>
 
         <script type="text/javascript">
             $("#submit").on("click", function (event) {
+                event.preventDefault();
                 var userData = {
-                    name: "Dave",
-                    photo: "pic here",
+                    name: $("#nameHere").val(),
+                    photo: $("#linkHere").val(),
                     scores: [
-                        "5",
-                        "1",
-                        "4",
-                        "4",
-                        "5",
-                        "1",
-                        "2",
-                        "5",
-                        "4",
-                        "1"
-
+                        $("#q1").val(),
+                        $("#q2").val(),
+                        $("#q3").val(),
+                        $("#q4").val(),
+                        $("#q5").val(),
+                        $("#q6").val(),
+                        $("#q7").val(),
+                        $("#q8").val(),
+                        $("#q9").val(),
+                        $("#q10").val()
                     ]
                 };
+                console.log(userData);
                 $.post("/api/friends", userData, function (data) {
                     console.log(data);
                 })

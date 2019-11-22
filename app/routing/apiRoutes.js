@@ -26,10 +26,8 @@ module.exports = function (app) {
                 //
                 
             } 
-            // friends.push(userData)
-        res.json(userData)
-
-        //end with res.jsonbestMatch
+        friends.push(userData)
+        res.json(bestMatch)
     });
 
 }
