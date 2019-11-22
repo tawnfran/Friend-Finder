@@ -5,9 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
         integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        
+
     <title>Friend Survey</title>
 </head>
 
@@ -180,9 +181,27 @@
                     </select>
                 </div>
             </div>
-            <button type="submit" class="btn btn-primary" id="submit">Submit</button>
+            <button type="submit" class="btn btn-primary" id="submit" data-toggle="modal" data-target="#modalDiv">Submit</button>
         </form>
         <hr>
+
+        <div class="modal" id="modalDiv" tabindex="-1" role="dialog">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h2 class="modal-title">Congrats! Your Match is:</h2>
+                    </div>
+                    <div class="modal-body">
+                      <h3 id="nameMatch"></h3>
+                      <img id="photoMatch" alt="">
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
         <div class="submitContainer">
             <footer class="footer">
                 <div class="container">
@@ -191,7 +210,11 @@
                 </div>
             </footer>
         </div>
-
+        <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
         <script type="text/javascript">
             $("#submit").on("click", function (event) {
                 event.preventDefault();
@@ -214,6 +237,8 @@
                 console.log(userData);
                 $.post("/api/friends", userData, function (data) {
                     console.log(data);
+                    $("#nameMatch").text("Congratulations! Your match is... " + data.name);
+                    $("#photoMatch").attr("src", data.photo).css("max-width", "100%").addClass("img-responsive");
                 })
             })
 

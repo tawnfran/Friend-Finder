@@ -2,7 +2,7 @@ var path = require("path");
 
 var friends = [{
     name: "Ahmed",
-    photo: "https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg",
+    photo: "http://upload.wikimedia.org/wikipedia/commons/8/8d/President_Barack_Obama.jpg",
     scores: [
         "2",
         "3",
@@ -19,7 +19,7 @@ var friends = [{
 
 {
     name: "tawny",
-    photo: "https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg",
+    photo: "http://upload.wikimedia.org/wikipedia/commons/8/8d/President_Barack_Obama.jpg",
     scores: [
         "1",
         "1",
@@ -34,7 +34,7 @@ var friends = [{
     ]
 }, {
     name: "justin",
-    photo: "https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg",
+    photo: "http://upload.wikimedia.org/wikipedia/commons/8/8d/President_Barack_Obama.jpg",
     scores: [
         "4",
         "1",
@@ -49,7 +49,7 @@ var friends = [{
     ]
 }, {
     name: "jack",
-    photo: "https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg",
+    photo: "http://upload.wikimedia.org/wikipedia/commons/8/8d/President_Barack_Obama.jpg",
     scores: [
         "5",
         "5",
@@ -64,7 +64,7 @@ var friends = [{
     ]
 }, {
     name: "sean",
-    photo: "https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg",
+    photo: "http://upload.wikimedia.org/wikipedia/commons/8/8d/President_Barack_Obama.jpg",
     scores: [
         "3",
         "1",
@@ -77,6 +77,7 @@ var friends = [{
         "2",
         "1"
     ]
-}];
+}
+];
 
 module.exports = friends;
